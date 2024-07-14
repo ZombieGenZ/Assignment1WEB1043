@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="view.css">
+    <link rel="stylesheet" href="alert.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>View</title>
+</head>
+<body>
+    <div class="main">
+        <div id="alert" style="width: 0; height: 0;"></div>
+        <!-- MARK: Header non-login -->
+        <!-- <div class="header">
+            <div class="header-left">
+                <img src="public/image/logo.svg" alt="">
+            </div>
+            <div class="header-center">
+                <input type="text" placeholder="Tìm kiếm nội dung bất kỳ">
+            </div>
+            <div class="header-right">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <button class="login">Đăng nhập</button>
+                <button class="register">Đăng ký</button>
+                <button class="language">
+                    <i class="fa-solid fa-earth-americas lang"></i>
+                </button>
+            </div>
+        </div> -->
+        <!-- MARK: Header login -->
+        <div class="header">
+            <div class="header-left">
+                <img src="public/image/logo.svg" alt="">
+            </div>
+            <div class="header-center">
+                <input type="text" placeholder="Tìm kiếm nội dung bất kỳ">
+            </div>
+            <div class="header-right">
+                <div class="money">
+                    <h5>đ <span id="money">0</span></h5>
+                </div>
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <div class="dropdown">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="submenu cart">
+                        <div class="none">
+                            <p>Bạn chưa có khóa học nào được thêm</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <button class="language">
+                    <i class="fa-solid fa-earth-americas lang"></i>
+                </button>
+            </div>
+        </div>
+        <div class="body">
+            <div class="body-header">
+                <div class="body-header-container">
+                    <div class="body-header-container-left">
+                        <h1>.NET Core MVC - The Complete Guide 2024 [E-commerce] [.NET8]</h1>
+                        <h5>Build real world e-commerce application using ASP.NET Core MVC, Entity Framework Core and ASP.NET Core Identity.</h5>
+                        <div class="raiting">
+                            <span class="tag">Bán chạy nhất</span> 
+                            <span class="star-text">4,6</span> 
+                            <div class="raiting-star">
+                                <img src="public/image/star.png" alt="" class="star-image">
+                                <img src="public/image/star.png" alt="" class="star-image">
+                                <img src="public/image/star.png" alt="" class="star-image">
+                                <img src="public/image/star.png" alt="" class="star-image">
+                                <img src="public/image/star-half.png" alt="" class="star-image">
+                            </div>
+                            <span><a href="#">(15968 xếp hạng)</a></span>
+                            <span>78.045 học viên</span>
+                        </div>
+                        <p class="author">Được tạo bởi <a href="#">Bhrugen Patel</a></p>
+                        <p>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Lần cập nhật gần đây nhất 6/2024</span>
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Tiếng Anh</span>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-keyboard"></i>
+                            <span>Tiếng Việt [Tự động], Tiếng Anh [Tự động], <br> Tiếng Bulgaria [Tự động], Tiếng Bồ Đào Nha [Tự động], Tiếng Estonia [Tự động], Tiếng Hungary [Tự động], Tiếng Hy Lạp [Tự động], Tiếng Hà Lan [Tự động], Tiếng Hàn Quốc [Tự động], Tiếng Latvia [Tự động], Tiếng Litva [Tự động], Tiếng Nhật [Tự động], Tiếng Pháp [Tự động], Tiếng Phần Lan [Tự động], Tiếng Romania [Tự động], Tiếng Slovak [Tự động], Tiếng Séc [Tự động], Tiếng Thổ Nhĩ Kỳ [Tự động], Tiếng Thụy Điển [Tự động], Tiếng Trung giản thể [Tự động], Tiếng Tây Ban Nha [Tự động], Tiếng Ukraina [Tự động], Tiếng Ý [Tự động], Tiếng Đan Mạch [Tự động], Tiếng Ả Rập [Tự động]</span>
+                        </p>
+                    </div>
+                    <div class="body-header-container-right">
+                        <div class="body-header-container-right-top">
+                            <img src="public/image/test1.jpg" alt="">
+                        </div>
+                        <div class="body-header-container-right-bottom">
+                            <h1 data-price="1599000">₫ 1.599.000</h1>
+                            <div class="button">
+                                <button class="add-cart" onclick="AddCart_VIEW(this)">Thêm vào giỏ hàng</button>
+                                <button class="add-love">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                                <button class="buy">Mua ngay</button>
+                            </div>
+                            <div class="BaoHanh">
+                                <p>Đảm bảo hoàn tiền trong 30 ngày</p>
+                            </div>
+                            <h5>Khóa học này bao gồm:</h5>
+                            <div class="QuyenLoi-items">
+                                <div class="QuyenLoi-items-left">
+                                    <i class="fa-solid fa-tv"></i>
+                                </div>
+                                <div class="QuyenLoi-items-right">
+                                    <p>17 giờ video theo yêu cầu</p>
+                                </div>
+                            </div>
+                            <div class="QuyenLoi-items">
+                                <div class="QuyenLoi-items-left">
+                                    <i class="fa-regular fa-file"></i>
+                                </div>
+                                <div class="QuyenLoi-items-right">
+                                    <p>7 bài viết</p>
+                                </div>
+                            </div>
+                            <div class="QuyenLoi-items">
+                                <div class="QuyenLoi-items-left">
+                                    <i class="fa-solid fa-mobile"></i>
+                                </div>
+                                <div class="QuyenLoi-items-right">
+                                    <p>Truy cập trên thiết bị di động và TV</p>
+                                </div>
+                            </div>
+                            <div class="QuyenLoi-items">
+                                <div class="QuyenLoi-items-left">
+                                    <i class="fa-solid fa-infinity"></i>
+                                </div>
+                                <div class="QuyenLoi-items-right">
+                                    <p>Quyền truy cập đầy đủ suốt đời</p>
+                                </div>
+                            </div>
+                            <div class="QuyenLoi-items">
+                                <div class="QuyenLoi-items-left">
+                                    <i class="fa-solid fa-tv"></i>
+                                </div>
+                                <div class="QuyenLoi-items-right">
+                                    <p>Giấy chứng nhận hoàn thành</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-body">
+                <div class="body-body-container">
+                    <div class="body-body-container-left">
+                        <div class="body-body-container-left-top">
+                            <div class="body-body-container-left-top-top">
+                                <h1>Nội dung bài học</h1>
+                            </div>
+                            <div class="body-body-container-left-top-bottom">
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Learn structure of ASP NET MVC Core (.NET 8) Project</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Learn structure of ASP NET Core (.NET 8) Razor Project</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Learn basic fundamentals of ASP NET MVC Core (.NET 8)</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Build 2 Projects throughout the course</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Integrate Identity Framework and learn how to add more fields to Users</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Interact with Razor class library for Identity</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Integrate Entity Framework along with code first migrations</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Sessions in ASP NET Core (.NET 8)</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Custom Tag Helpers in ASP NET Core (.NET 8)</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>View Components and Partial Views in ASP NET Core</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Bootstrap v5</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Authentication and Authorization in ASP NET Core (.NET 8)</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Role Management in ASP NET Core Identity</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Email notifications</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>TempData in ASP NET Core (.NET 8)</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Stripe Payment Integrations</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Repository Pattern to Access Database</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Seed Database Migrations Automatically</p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-items">
+                                    <div class="body-body-container-left-top-bottom-items-left">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-items-right">
+                                        <p>Deploying website on Microsoft Azure</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-body-container-left-center">
+                            <div class="body-body-container-left-center-top">
+                                <h1>Yêu cầu</h1>
+                            </div>
+                            <div class="body-body-container-left-center-bottom">
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            3-6 months knowledge of C#
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Visual Studio 2022
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            SQL Server Management Studio
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            .NET 6
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-body-container-left-bottom">
+                            <div class="body-body-container-left-bottom-top">
+                                <h1>Mô tả</h1>
+                            </div>
+                            <div class="body-body-container-left-bottom-bottom">
+                                <p>
+                                    This is a Beginner to Advanced level course on .NET 8 that will take you from basics all the way to advance mode. This course is for anyone who is new to ASP.NET Core or who is familiar with ASP.NET and wants to take the first stab at understanding what is different in ASP.NET Core. From there we would be building multiple projects to understand all concepts in .NET 8 as we will deploy our final application on Azure as well as IIS.
+                                </p>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            We would then take a look at new concepts in ASP.NET Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            We would build a small Razor application with CRUD operations using Entity framework for integration with the database.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            We would build our Bulky Book website where we will learn advanced topics in ASP.NET MVC Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Finally, we will deploy our Bulky Book website on Microsoft Azure and IIS.
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <p><b>What are the requirements?</b></p>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            3-6 months knowledge of c#
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Visual Studio 2022
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            SQL Server Management Studio
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <p><b>What am I going to get from this course?</b></p>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Learn the structure of ASP NET MVC Core Project
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Learn the structure of ASP NET Core  Razor Project
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Learn the fundamentals of ASP NET MVC Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Build 2 Projects throughout the course
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Integrate Identity Framework and learn how to add more fields to Users
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Interact with Razor class library for Identity
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Integrate Entity Framework along with code first migrations
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Sessions in ASP NET Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Custom Tag Helpers in ASP NET Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            View Components and Partial Views in ASP NET Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Bootstrap v5
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Authentication and Authorization in ASP NET Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Role Management in ASP NET Core Identity
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Email notifications
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            TempData/ViewBag/ViewData in ASP NET Core
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Stripe Payment Integrations
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Repository Pattern to Access Database
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Seed Database Migrations Automatically
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Deploying the website on Microsoft Azure
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <h5>Đối tượng của khóa học này:</h5>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Anyone who wants to learn ASP NET MVC core (.NET 8) from Basics to Advance
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Anyone who wants to learn most latest changes with Microsoft newest framework
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="body-body-container-left-top-bottom-bottom-dot">
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-left">
+                                        <b>•</b>
+                                    </div>
+                                    <div class="body-body-container-left-top-bottom-bottom-dot-right">
+                                        <p>
+                                            Anyone interested in learning how to Architect Large Scale Projects
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-top-left">
+                <h3>Giảng dạy online cho cả thế giới</h3>
+                <p><b>Tạo một khóa học video online, tiếp cận học viên trên toàn cầu và kiếm tiền</b></p>
+            </div>
+            <div class="footer-top-right">
+                <button>Giản dạy trên Udemy</button>
+            </div>
+            <div class="footer-center-left">
+                <div class="footer-center-left-items">
+                    <p><a href="#">Udemy Business</a></p>
+                    <p><a href="#">Giảng dạy trên Udemy</a></p>
+                    <p><a href="#">Tải ứng dụng</a></p>
+                    <p><a href="#">Giới thiệu</a></p>
+                    <p><a href="#">Hãy liên hệ với chúng tôi</a></p>
+                </div>
+                <div class="footer-center-left-items">
+                    <p><a href="#">Nghề nghiệp</a></p>
+                    <p><a href="#">Blog</a></p>
+                    <p><a href="#">Trợ giúp và Hổ trợ</a></p>
+                    <p><a href="#">Đơn vị liên kết</a></p>
+                    <p><a href="#">Nhà đầu tư</a></p>
+                </div>
+                <div class="footer-center-left-items">
+                    <p><a href="#">Điều khoản</a></p>
+                    <p><a href="#">Chính xách quyền riêng tư</a></p>
+                    <p><a href="#">Cài đặt cookie</a></p>
+                    <p><a href="#">Sơ đồ trang web</a></p>
+                    <p><a href="#">Tuyên bố và khả năng tiếp cận</a></p>
+                </div>
+            </div>
+            <div class="footer-center-right">
+                <button><i class="fa-solid fa-earth-americas"></i> Tiếng việt</button>
+            </div>
+            <div class="footer-bottom-left">
+                <a href="#"><img src="public/image/logo-w.svg" alt=""></a>
+            </div>
+            <div class="footer-bottom-rigth">
+                <p>&copy; <span id="Year-copy"></span> Udemy, Inc.</p>
+            </div>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+    <script src="money.js"></script>
+    <script src="alert.js"></script>
+    <script src="title-copy.js"></script>
+    <script src="https://kit.fontawesome.com/476445fe42.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
