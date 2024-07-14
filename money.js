@@ -86,3 +86,9 @@ function ResetMoney() {
     localStorage.setItem("money", money);
     UpdateMoney();
 }
+
+console.log("%cCÁC LỆNH ĐỂ SỬA DỬ LIỆU TIỀN TỆ", "font-size: 30px; font-weight: bold; background-image: linear-gradient(to right, #FB0808, #D8FF00); -webkit-background-clip: text; background-clip: text; color: transparent;");
+console.log("%cSetMoney(<Số tiền>): dùng để chỉnh số tiền hiện có", "font-size: 16px");
+console.log("%cAddMoney(<Số tiền>): dùng để thêm vô số tiền hiện có", "font-size: 16px");
+console.log("%cRemoveMoney(<Số tiền>): dùng để trừ vô số tiền hiện có", "font-size: 16px");
+console.log("%cResetMoney(): dùng để đặt lại số tiền hiện có", "font-size: 16px");
