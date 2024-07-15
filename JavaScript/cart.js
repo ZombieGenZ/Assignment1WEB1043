@@ -13,7 +13,6 @@ function AddCart_INDEX(items) {
         const itemsName = element.querySelector("h5").textContent;
         const itemsPrice = element.querySelectorAll("b");
         const itemsImage = element.querySelectorAll("img");
-        const price = element.querySelectorAll("p");
         const itemsData = {
             name: itemsName,
             quantity: 1,
@@ -41,7 +40,6 @@ function AddCart_VIEW(items) {
         const itemsName = element.querySelector("h1").textContent;
         const itemsPrice = element.querySelectorAll("h1");
         const itemsImage = element.querySelectorAll("img");
-        console.log(itemsPrice[1].dataset.price)
         const itemsData = {
             name: itemsName,
             quantity: 1,
