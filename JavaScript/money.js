@@ -22,27 +22,14 @@ function SetMoney(value) {
         }
         else {
             money = newValue;
-        }
-    }
-    catch (e) {
-        console.error(e);
-    }
-    UpdateMoney();
-}
-
-function SetMoney(value) {
-    try {
-        const newValue = Number(value);
-        if (isNaN(newValue)) {
-            throw "Invalid value";
-        }
-        else {
-            money = Number(newValue);
             localStorage.setItem("money", money);
         }
     }
     catch (e) {
         console.error(e);
+    }
+    finally {
+        CheckMoney();
     }
     UpdateMoney();
 }
@@ -78,6 +65,9 @@ function RemoveMoney(value) {
     catch (e) {
         console.error(e);
     }
+    finally {
+        CheckMoney();
+    }
     UpdateMoney();
 }
 
@@ -92,3 +82,10 @@ console.log("%cSetMoney(<Số tiền>): dùng để chỉnh số tiền hiện c
 console.log("%cAddMoney(<Số tiền>): dùng để thêm vô số tiền hiện có", "font-size: 16px");
 console.log("%cRemoveMoney(<Số tiền>): dùng để trừ vô số tiền hiện có", "font-size: 16px");
 console.log("%cResetMoney(): dùng để đặt lại số tiền hiện có", "font-size: 16px");
+
+
+function CheckMoney() {
+    if (money < 0) {
+        ResetMoney();
+    }
+}
