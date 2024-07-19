@@ -19,11 +19,7 @@ function AddCart_INDEX(items) {
     else {
         const itemsName = element.querySelector("h5").textContent;
         const itemsPrice = element.querySelectorAll("b");
-<<<<<<< HEAD
         const itemsImage = element.querySelector("img");
-=======
-        const itemsImage = element.querySelectorAll("img");
->>>>>>> eb07c99775edc047f77aea23c68ae0293924f978
         const itemsData = {
             name: itemsName,
             quantity: 1,
