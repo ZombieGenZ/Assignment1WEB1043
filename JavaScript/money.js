@@ -31,7 +31,11 @@ function SetMoney(value) {
     finally {
         CheckMoney();
     }
+<<<<<<< HEAD
     // UpdateMoney();
+=======
+    UpdateMoney();
+>>>>>>> eb07c99775edc047f77aea23c68ae0293924f978
 }
 
 function AddMoney(value) {
@@ -68,7 +72,11 @@ function RemoveMoney(value) {
     finally {
         CheckMoney();
     }
+<<<<<<< HEAD
     // UpdateMoney();
+=======
+    UpdateMoney();
+>>>>>>> eb07c99775edc047f77aea23c68ae0293924f978
 }
 
 function ResetMoney() {
@@ -82,15 +90,21 @@ console.log("%cSetMoney(<Số tiền>): dùng để chỉnh số tiền hiện c
 console.log("%cAddMoney(<Số tiền>): dùng để thêm vô số tiền hiện có", "font-size: 16px");
 console.log("%cRemoveMoney(<Số tiền>): dùng để trừ vô số tiền hiện có", "font-size: 16px");
 console.log("%cResetMoney(): dùng để đặt lại số tiền hiện có", "font-size: 16px");
+<<<<<<< HEAD
 console.log("%cShowMoney(): dùng để xem số tiền hiện có", "font-size: 16px");
+=======
+>>>>>>> eb07c99775edc047f77aea23c68ae0293924f978
 
 
 function CheckMoney() {
     if (money < 0) {
         ResetMoney();
     }
+<<<<<<< HEAD
 }
 
 function ShowMoney() {
     console.log(`Bạn đang có ${money.toLocaleString('de-DE')} đ`);
+=======
+>>>>>>> eb07c99775edc047f77aea23c68ae0293924f978
 }
