@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="alert.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/alert.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Shop</title>
 </head>
 <body>
     <div class="main">
         <div id="alert" style="width: 0; height: 0;"></div>
-        <!-- MARK: Header non-login -->
+        <!-- MARK: Global Header non-login -->
         <!-- <div class="header">
             <div class="header-left">
                 <img src="public/image/logo.svg" alt="">
@@ -31,7 +31,7 @@
                 </button>
             </div>
         </div> -->
-        <!-- MARK: Header login -->
+        <!-- MARK: Global Header login -->
         <div class="header">
             <div class="header-left">
                 <img src="public/image/logo.svg" alt="">
@@ -41,10 +41,15 @@
             </div>
             <div class="header-right">
                 <div class="money">
-                    <h5>đ <span id="money">0</span></h5>
+                    <h5>đ <span id="cart-total">0</span></h5>
+                    <!-- <h5>đ <span id="money">0</span></h5> -->
                 </div>
                 <div class="dropdown">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="total-product">
+                        0
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
                     <div class="submenu cart">
                         <div class="none">
                             <p>Bạn chưa có khóa học nào được thêm</p>
@@ -76,7 +81,7 @@
                         <div class="category-items">
                             <div class="category-items-top">
                                 <div class="category-items-top-left">
-                                    <h1 class="FLASTSALE">FLAST SALE</h1>
+                                    <h1 class="FLASTSALE">FLASH SALE</h1>
                                 </div>
                                 <div class="category-items-top-right">
                                     <h1><i class="fa-regular fa-clock"></i> <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span></>
@@ -95,7 +100,7 @@
                                         </div>
                                     </div>
                                     <div class="category-items-bottom-items-bottom">
-                                        <a href="#"><h5>.NET Core MVC - The Complete Guide 2024 [E-commerce] [.NET8]</h5></a>
+                                        <a href="view_1.html"><h5>.NET Core MVC - The Complete Guide 2024 [E-commerce] [.NET8]</h5></a>
                                         <a href="#"><p>Bhrugen Patel</p></a>
                                         <p>
                                             <b>4,6</b> 
@@ -384,13 +389,13 @@
         </div>
 
     </div>
-    <script src="title-copy.js"></script>
-    <script src="slideshow.js"></script>
-    <script src="flashsale.js"></script>
-    <script src="controls.js"></script>
-    <script src="cart.js"></script>
-    <script src="money.js"></script>
-    <script src="alert.js"></script>
+    <script src="JavaScript/title-copy.js"></script>
+    <script src="JavaScript/slideshow.js"></script>
+    <script src="JavaScript/flashsale.js"></script>
+    <script src="JavaScript/controls.js"></script>
+    <script src="JavaScript/cart.js"></script>
+    <script src="JavaScript/money.js"></script>
+    <script src="JavaScript/alert.js"></script>
     <script src="https://kit.fontawesome.com/476445fe42.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

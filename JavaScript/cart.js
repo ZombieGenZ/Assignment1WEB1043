@@ -1,5 +1,12 @@
 let cart = [];
 
+const cartData = localStorage.getItem("cartData");
+if (cartData) {
+    const ObjectData = JSON.parse(cartData);
+    cart = ObjectData;
+    UpdateCart();
+}
+
 function AddCart_INDEX(items) {
     const element = items.parentElement.parentElement.parentElement;
 
@@ -12,19 +19,19 @@ function AddCart_INDEX(items) {
     else {
         const itemsName = element.querySelector("h5").textContent;
         const itemsPrice = element.querySelectorAll("b");
-        const itemsImage = element.querySelectorAll("img");
-        const price = element.querySelectorAll("p");
+        const itemsImage = element.querySelector("img");
         const itemsData = {
             name: itemsName,
             quantity: 1,
             price: itemsPrice[2].dataset.price,
             total: itemsPrice[2].dataset.price,
-            picture: itemsImage[0].src,
+            picture: itemsImage.src,
             url: "#"
         };
         cart.push(itemsData);
     }
-
+    UpdateTotalCart();
+    UpdateData();
     UpdateCart();
 }
 
@@ -41,7 +48,6 @@ function AddCart_VIEW(items) {
         const itemsName = element.querySelector("h1").textContent;
         const itemsPrice = element.querySelectorAll("h1");
         const itemsImage = element.querySelectorAll("img");
-        console.log(itemsPrice[1].dataset.price)
         const itemsData = {
             name: itemsName,
             quantity: 1,
@@ -52,7 +58,8 @@ function AddCart_VIEW(items) {
         };
         cart.push(itemsData);
     }
-
+    UpdateTotalCart();
+    UpdateData();
     UpdateCart();
 }
 
@@ -81,6 +88,7 @@ function UpdateCart() {
                             </div>`;
         cartElement.innerHTML += HTMLStructure;
     });
+    DisplayTotalProduct();
     const cartData = cartElement.innerHTML;
     if (cartData == "") {
         const HTMLStructure = `<div class="none">
@@ -127,6 +135,8 @@ function InputChange(items) {
         cartItem.quantity = Number(qty.value);
         cartItem.total = cartItem.price * cartItem.quantity;
     }
+    UpdateTotalCart();
+    UpdateData();
 }
 
 function InputAdd(items) {
@@ -153,6 +163,8 @@ function Delete(items) {
     if (existingItem) {
         cart.splice(cart.indexOf(existingItem), 1);
     }
+    UpdateTotalCart();
+    UpdateData();
     UpdateCart();
 }
 
@@ -160,16 +172,44 @@ function Buy(items) {
     const element = items.parentElement.parentElement;
 
     const existingItem = cart.find(item => item.name === element.querySelector("h5").textContent);
-    const money = document.getElementById("money").textContent;
-    const money_Number = Number(money.replaceAll(".", ""));
+    // const money = document.getElementById("money").textContent;
+    // const money_Number = Number(money.replaceAll(".", ""));
 
-    if (existingItem.total < money_Number) {
+    if (existingItem.total <= money) {
         RemoveMoney(existingItem.total);
         cart.splice(cart.indexOf(existingItem), 1);
         Alert("Thanh toán thành công!");
+        UpdateData();
         UpdateCart();
     }
     else {
         Alert("Số dư không đủ. Vui lòng thử lại sau!");
     }
+}
+
+function UpdateData() {
+    const JsonData = JSON.stringify(cart);
+    localStorage.setItem("cartData", JsonData);
+}
+
+function UpdateTotalCart() {
+    const display = document.getElementById("cart-total");
+
+    const total = GetTotal();
+
+    display.textContent = Number(total).toLocaleString('de-DE');
+}
+
+UpdateTotalCart();
+
+function GetTotal() {
+    let total = 0;
+    cart.forEach(e => {
+        total += Number(e.total);
+    });
+    return total;
+}
+
+function DisplayTotalProduct() {
+    document.getElementById("total-product").textContent = cart.length > 99 ? "99+" : cart.length;
 }

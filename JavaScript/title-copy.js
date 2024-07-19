@@ -1,4 +1,4 @@
-document.title = document.title + ` | ${location.hostname}`;
+document.title = document.title + ` | ${location.hostname  == "" ? "No Server" : location.hostname}`;
 
 document.addEventListener("DOMContentLoaded", () => {
     const date = new Date();

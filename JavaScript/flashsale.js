@@ -36,4 +36,3 @@ function updateTime() {
     document.getElementById("sales").innerHTML = "";
   }
 }
-
